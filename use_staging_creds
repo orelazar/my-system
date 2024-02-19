@@ -1,0 +1,1 @@
+cp ~/.pynt/creds.json.staging creds.json

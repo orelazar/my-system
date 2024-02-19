@@ -1,0 +1,28 @@
+#!/bin/bash
+
+dst_dir="/home/or/src/test/playground"
+
+
+template=$(cat <<EOF
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello World!")
+}
+EOF
+)
+
+if [[ -d $dst_dir ]];
+then 
+	rm -rf $dst_dir/*
+else 
+	mkdir -p $dst_dir
+fi
+
+pushd $dst_dir
+go mod init playground
+go mod tidy
+printf "$template" > main.go
+code /home/or/src/test/playground

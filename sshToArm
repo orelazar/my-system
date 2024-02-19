@@ -1,0 +1,2 @@
+#!/bin/bash
+ssh -i /home/or/ec2key/armKeyPair.pem ubuntu@ec2-3-237-85-52.compute-1.amazonaws.com
